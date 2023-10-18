@@ -14,8 +14,10 @@ const CodeEditor = () => {
     setCode(e.target.value);
   };
 
-  const handleSpecialKeys = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (event.key === "Tab") {
+  const handleSpecialKeys = (
+    event: React.KeyboardEvent<HTMLTextAreaElement>
+  ) => {
+    if (event.key === "Tab" || event.keyCode === 9) {
       event.preventDefault();
       const { selectionStart, selectionEnd } = event.currentTarget;
       const newCode =
@@ -32,7 +34,7 @@ const CodeEditor = () => {
         selectionStart + 1
       );
     }
-    if (event.key === "Enter") {
+    if (event.key === "Enter" || event.keyCode === 13) {
       event.preventDefault();
       const { selectionStart, selectionEnd } = event.currentTarget;
       const currentLine =
