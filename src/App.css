@@ -1,0 +1,15 @@
+
+.mainContainer {
+  /* make container in center */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+}
+
+
+.heading {
+  font-size: x-large;
+  font-weight: 600;
+}
