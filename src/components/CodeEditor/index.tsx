@@ -36,7 +36,7 @@ const CodeEditor = () => {
     }
     if (event.key === "Enter" || event.keyCode === 13) {
       event.preventDefault();
-      const { selectionStart, selectionEnd } = event.currentTarget;
+      const { selectionStart } = event.currentTarget;
       const currentLine =
         code.substring(0, selectionStart).split("\n").pop() || "";
       const indentation = /^[ \t]*/.exec(currentLine);
@@ -50,8 +50,6 @@ const CodeEditor = () => {
         selectionStart + indentation!.length + 1,
         selectionStart + indentation!.length + 1
       );
-
-      console.log(selectionStart, selectionEnd, "selectionStart");
 
       codeAreaRef!.current!.focus();
       codeAreaRef!.current!.value = newCode;
